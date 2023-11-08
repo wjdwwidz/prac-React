@@ -36,8 +36,6 @@ class App extends Component {
         }
         i += 1;
       }
-      // _title = this.state.contents[0].title;
-      // _desc = this.state.contents[0].desc;
     }
     return (
       <div className="App">
