@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import TOC from "./Components/TOC"
 import Content from "./Components/Content"
 import Subject from "./Components/Subject"
+import Control from "./Components/Control"
 import './App.css';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
     super(props);
     this.state = {
       mode:"read",
-      selected_content_id:2,
+      selected_content_id:3,
       subject:{title:'WEB', sub:'World Wide Web!'},
       welcome:{title:'Welcome',desc:'Hello, React!!'},
       contents:[
@@ -56,6 +57,12 @@ class App extends Component {
           }.bind(this)}
           data={this.state.contents}
           ></TOC>
+        <Control onChangeMode={function(_mode){
+          this.setState({
+            mode:_mode
+          }
+        )
+        }.bind(this)}></Control>
         <Content title={_title} desc={_desc}></Content>
       </div>
     )
